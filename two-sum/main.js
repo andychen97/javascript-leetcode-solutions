@@ -42,5 +42,4 @@ var twoSum = function (nums, target) {
 };
 
 const answer = twoSum([2, 7, 11, 15], 9);
-// eslint-disable-next-line no-console
 console.log(answer);

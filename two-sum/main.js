@@ -29,6 +29,16 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 */
 
+//
+// define a function with 2 parameters (nums, target)
+// create an empty object named map
+// loop through array
+//    subtract target from nums[i] and assign to a variable named diff
+//    use a conditional to check if maps contains a key of diff
+//      if not, then add nums[i] to the maps object using index as value
+//      if so, then returns indexes in an array
+//
+
 var twoSum = function (nums, target) {
   const obj = {};
   for (let i = 0; i < nums.length; i++) {

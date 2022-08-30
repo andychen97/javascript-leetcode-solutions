@@ -58,3 +58,30 @@ var romanToInt = function (s) {
 const answer = romanToInt('MCMXCIV');
 // eslint-disable-next-line no-console
 console.log(answer);
+
+// create a map of all the roman numerals
+// assign 0 to a new variable named count;
+// loop through s
+// check i and i + 1 and assign the values to current and next
+// if current is greater than next, then add current to count
+// if next is greater than current, subtract current from count
+// return count;
+
+var testRomanToInt = function (s) {
+  let count = 0;
+  const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  for (let i = 0; i < s.length; i++) {
+    const current = map[s[i]];
+    const next = map[s[i + 1]];
+    if (current > next) {
+      count += current;
+    } else {
+      count -= current;
+    }
+  }
+  return count;
+};
+
+const answer2 = testRomanToInt('MCMXCIV');
+// eslint-disable-next-line no-console
+console.log(answer2);

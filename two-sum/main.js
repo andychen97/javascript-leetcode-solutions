@@ -51,5 +51,5 @@ var twoSum = function (nums, target) {
   }
 };
 
-const answer = twoSum([2, 7, 11, 15], 9);
+const answer = twoSum([2, 11, 13, 7, 15], 9);
 console.log(answer);

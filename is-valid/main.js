@@ -55,7 +55,7 @@ var isValid2 = s => {
   const stack = [];
   const parens = '() {} []';
 
-  for (let i = 1; i < s.length; i++) {
+  for (let i = 0; i < s.length; i++) {
     stack.push(s[i]);
 
     const open = stack[stack.length - 2];
@@ -77,11 +77,33 @@ console.log(answer2);
 
 // pseudo code.
 // create a string map of the parens
-// create an empty array and assign it to a variable named arr
+// create an empty array and assign it to a variable named stack
 // loope through s
-// push s[i] to arr
-// assign  arr at length - 2 to get the open parens
-// assign  arr at length - 1 to get the closed parens
+// push s[i] to stacl
+// assign  stacl at length - 2 to get the open parens
+// assign  stacl at length - 1 to get the closed parens
 // assign open + closed to a variable named posParens
 // check if parens includes posParens
-// return true/false if the arr === 0;
+// if so the pop 2 off the stack
+// return true/false if the stacl === 0;
+
+const isValid3 = s => {
+  const parens = '[] {} ()';
+  const stack = [];
+  for (let i = 0; i < s.length; i++) {
+    stack.push(s[i]);
+    const open = stack[stack.length - 2];
+    const closed = stack[stack.length - 1];
+    const posParens = open + closed;
+
+    if (parens.includes(posParens)) {
+      stack.pop();
+      stack.pop();
+    }
+  }
+  return stack.length === 0;
+};
+
+const answer3 = isValid3('[({})()]');
+// eslint-disable-next-line no-console
+console.log(answer3);

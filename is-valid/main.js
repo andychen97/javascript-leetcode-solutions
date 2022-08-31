@@ -50,3 +50,38 @@ var isValid = function (s) {
 const answer = isValid('[({})()]');
 // eslint-disable-next-line no-console
 console.log(answer);
+
+var isValid2 = s => {
+  const stack = [];
+  const parens = '() {} []';
+
+  for (let i = 1; i < s.length; i++) {
+    stack.push(s[i]);
+
+    const open = stack[stack.length - 2];
+    const closed = stack[stack.length - 1];
+
+    const posParens = open + closed;
+
+    if (parens.includes(posParens)) {
+      stack.pop();
+      stack.pop();
+    }
+  }
+  return stack.length === 0;
+};
+
+const answer2 = isValid2('[({})()]');
+// eslint-disable-next-line no-console
+console.log(answer2);
+
+// pseudo code.
+// create a string map of the parens
+// create an empty array and assign it to a variable named arr
+// loope through s
+// push s[i] to arr
+// assign  arr at length - 2 to get the open parens
+// assign  arr at length - 1 to get the closed parens
+// assign open + closed to a variable named posParens
+// check if parens includes posParens
+// return true/false if the arr === 0;

@@ -24,3 +24,5 @@ var rotateString = function (s, goal) {
 const answer = rotateString('abcde', 'cdeab');
 // eslint-disable-next-line no-console
 console.log(answer);
+
+// pseudo code

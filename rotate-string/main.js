@@ -26,3 +26,15 @@ const answer = rotateString('abcde', 'cdeab');
 console.log(answer);
 
 // pseudo code
+// multiply string s by 2 and assign it to a variable combined
+// check if combined includes goal
+// return true or false
+
+var rotateString2 = function (s, goal) {
+  const combined = s + s;
+  return combined.includes(goal);
+};
+
+const answer2 = rotateString2('abcde', 'cdeab');
+// eslint-disable-next-line no-console
+console.log(answer2);

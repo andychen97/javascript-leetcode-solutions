@@ -26,11 +26,14 @@ const answer = rotateString('abcde', 'cdeab');
 console.log(answer);
 
 // pseudo code
+// check the lengths of both s and goal
+//    if they are not equal, return false
 // multiply string s by 2 and assign it to a variable combined
 // check if combined includes goal
 // return true or false
 
 var rotateString2 = function (s, goal) {
+  if (s.length !== goal.length) return false;
   const combined = s + s;
   return combined.includes(goal);
 };

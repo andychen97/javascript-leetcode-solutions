@@ -61,3 +61,19 @@ Results:
 Runtime: 177 ms, faster than 73.14% of JavaScript online submissions for Roman to Integer.
 Memory Usage: 46.8 MB, less than 81.82% of JavaScript online submissions for Roman to Integer.
 */
+
+var rotateString = function (s, goal) {
+  if (s.length !== goal.length) return false;
+  const combined = s + s;
+  return combined.includes(goal);
+};
+
+const answer4 = rotateString('abcde', 'cdeab');
+// eslint-disable-next-line no-console
+console.log(answer4);
+
+/*
+Results:
+Runtime: 61 ms, faster than 94.73% of JavaScript online submissions for Rotate String.
+Memory Usage: 42.2 MB, less than 51.59% of JavaScript online submissions for Rotate String.
+*/

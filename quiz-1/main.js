@@ -40,3 +40,24 @@ Results:
 Runtime: 159 ms, faster than 98.71% of JavaScript online submissions for Palindrome Number.
 Memory Usage: 50.4 MB, less than 86.06% of JavaScript online submissions for Palindrome Number.
 */
+
+var romanToInt = function (s) {
+  const roman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let count = 0;
+  for (let i = 0; i < s.length; i++) {
+    const first = roman[s[i]];
+    const next = roman[s[i + 1]];
+    first < next ? count -= first : count += first;
+  }
+  return count;
+};
+
+const answer3 = romanToInt('III');
+// eslint-disable-next-line no-console
+console.log(answer3);
+
+/*
+Results:
+Runtime: 177 ms, faster than 73.14% of JavaScript online submissions for Roman to Integer.
+Memory Usage: 46.8 MB, less than 81.82% of JavaScript online submissions for Roman to Integer.
+*/

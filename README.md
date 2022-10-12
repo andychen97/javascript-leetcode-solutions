@@ -1,4 +1,4 @@
-Leetcode problems solved: 1, 9, 13, 14, 20, 796
+Leetcode problems solved: 1, 9, 13, 14, 20, 796, 33
 Quiz 1: 1, 9, 13, 14, 20, 796
 MIN HELP: 13, 796
 MED HELP:

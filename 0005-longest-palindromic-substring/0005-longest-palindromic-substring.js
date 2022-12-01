@@ -13,6 +13,7 @@ var longestPalindrome = function(s) {
     return s.slice(max[0], max[1]);
 };
 
+//helper function to check for longest palindrome
 const Palindrome = (left, right, s) => {
     while (left >= 0 && right < s.length) {
         if (s[left] !== s[right]) {
@@ -21,5 +22,5 @@ const Palindrome = (left, right, s) => {
         left--;
         right++;
     }
-    return [left + 1, right]
+    return [left + 1, right];
 }

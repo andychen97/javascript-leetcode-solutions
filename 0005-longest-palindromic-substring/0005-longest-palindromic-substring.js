@@ -5,6 +5,7 @@
 var longestPalindrome = function(s) {
     let max = [0, 1];
     for(let i = 0; i < s.length; i++) {
+        //run the helper function to for odd and even to see if we have an odd or even palindrome
         let even = Palindrome(i - 1, i, s);
         let odd = Palindrome(i - 1, i + 1, s);
         let currentMax = odd[1] - odd[0] > even[1] - even[0] ? odd : even;

@@ -5,13 +5,13 @@
 
 var uniqueOccurrences = function(arr) {
     let tracker = {};
-    for (let element of arr) {
-        if (tracker[element]) {
-            tracker[element]++;
+    for (let i = 0; i < arr.length; i++) {
+        if (tracker[arr[i]]) {
+            tracker[arr[i]] += 1;
         } else {
-            tracker[element] = 1;     
+            tracker[arr[i]] = 1;
         }
-    }
+      }
     const counter = Object.values(tracker);
     return counter.length === new Set(counter).size;
 };

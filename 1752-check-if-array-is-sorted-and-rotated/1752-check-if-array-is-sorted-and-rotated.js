@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 
+// 55 ms runtime 42.2MB space
 var check = function(nums) {
    var count = 0;
     for(let i = 0; i < nums.length; i++) {

@@ -2,9 +2,8 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
- [2,7,11,15], target = 9
- 
  */
+
 var twoSum = function(nums, target) {
     let map = {};
     for (let i = 0; i < nums.length; i++) {

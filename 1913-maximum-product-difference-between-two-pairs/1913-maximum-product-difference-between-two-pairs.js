@@ -3,11 +3,10 @@
  * @return {number}
  */
 
-//destructuring
+//sorting
 var maxProductDifference = function(nums) {
-    const [a, b] = nums.sort((a, b) => b - a);
-    const [c, d] = nums.reverse();
-    return (a * b) - (c * d);
+    const sorted = nums.sort((a, b) => a - b);
+    return (sorted[sorted.length - 1] * sorted[sorted.length - 2]) - (sorted[0] * sorted[1]);
 };
 
 // // brute force

@@ -9,9 +9,8 @@ var canConstruct = function(ransomNote, magazine) {
         if (map[magazine[i]]) map[magazine[i]]++;
         else map[magazine[i]] = 1;
     }
-    console.log(map)
     for (let j = 0; j < ransomNote.length; j++) {
-        if (map[ransomNote[j]] === 0 || map[ransomNote[j]] === undefined) return false;
+        if (map[ransomNote[j]] === 0 || !(map[ransomNote[j]])) return false;
         else map[ransomNote[j]]--;   
     }
     return true;

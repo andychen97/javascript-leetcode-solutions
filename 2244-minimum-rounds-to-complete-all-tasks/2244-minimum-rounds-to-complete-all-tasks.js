@@ -18,7 +18,7 @@ var minimumRounds = function(tasks) {
     return count;
 };
 
-// SLOOOWWWW runtime so refactored to use for of loop instead of for loop
+// changed for loop to for..of loop above ^ 
 // var minimumRounds = function(tasks) {
 //     const map = {};
 //     let count = 0;

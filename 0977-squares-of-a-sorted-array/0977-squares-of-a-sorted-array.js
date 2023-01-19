@@ -3,5 +3,8 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    return nums.map(element => Math.pow(element, 2)).sort((a,b) => a - b);
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = Math.pow(nums[i], 2);
+    }
+    return nums.sort((a, b) => a - b);
 };

@@ -3,7 +3,7 @@
  * @return {number}
  */
 
-// fastest solution
+// fastest solution 50ms Runtime, faster than 100%
 var findSpecialInteger = function(arr) {
     let min = Math.floor(arr.length / 4);
     for (let i = 0; i < arr.length - min; i++) {

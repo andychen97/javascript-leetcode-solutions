@@ -4,17 +4,16 @@
  * @return {character}
  */
 var slowestKey = function(releaseTimes, keysPressed) {
-  let maxD = releaseTimes[0], maxK = keysPressed[0];
-  
-  for (let i = 1; i < releaseTimes.length; i += 1) {
-    const duration = releaseTimes[i] - releaseTimes[i-1];
-    if (maxD < duration) {
-      maxD = duration;
-      maxK = keysPressed[i];
-    } else if (maxD == duration && keysPressed[i] > maxK) {
-      maxK = keysPressed[i];
+    let longestTime = releaseTimes[0];
+    let letter = keysPressed[0];
+    
+    for (let i = 1; i < releaseTimes.length; i++) {
+        if (releaseTimes[i] - releaseTimes[i - 1] > longestTime) {
+            longestTime = releaseTimes[i] - releaseTimes[i - 1];
+            letter = keysPressed[i];
+        } else if (releaseTimes[i] - releaseTimes[i - 1] === longestTime && keysPressed[i] > letter) {
+            letter = keysPressed[i];
+        }
     }
-  }
-  
-  return maxK;
+    return letter;
 };

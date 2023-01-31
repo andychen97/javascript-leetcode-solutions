@@ -8,10 +8,11 @@ var slowestKey = function(releaseTimes, keysPressed) {
     let letter = keysPressed[0];
     
     for (let i = 1; i < releaseTimes.length; i++) {
-        if (releaseTimes[i] - releaseTimes[i - 1] > longestTime) {
-            longestTime = releaseTimes[i] - releaseTimes[i - 1];
+        let time = releaseTimes[i] - releaseTimes[i - 1];
+        if (time > longestTime) {
+            longestTime = time;
             letter = keysPressed[i];
-        } else if (releaseTimes[i] - releaseTimes[i - 1] === longestTime && keysPressed[i] > letter) {
+        } else if (time === longestTime && keysPressed[i] > letter) {
             letter = keysPressed[i];
         }
     }

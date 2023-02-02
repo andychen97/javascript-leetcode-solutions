@@ -11,6 +11,5 @@ var checkIfPangram = function(sentence) {
             map[sentence[i]] = 1;
         }
     }
-    console.log(map);
     return Object.values(map).length === 26;
 };

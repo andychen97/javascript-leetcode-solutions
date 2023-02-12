@@ -7,10 +7,8 @@ var longestPalindrome = function(s) {
     for (let letter of s) {
         map[letter] ? map[letter]++ : map[letter] = 1;
     }
-    // let values = Object.values(map).sort((a,b) => b - a);
     let count = 0;
     let single = 1;
-    // for (let j = 0; j < values.length; j++) {
     for (let num in map) {
         if (map[num] % 2 === 0) {
             count += map[num];

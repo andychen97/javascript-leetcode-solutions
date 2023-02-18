@@ -2,6 +2,7 @@
  * @param {string} s
  * @return {string}
  */
+
 var reverseOnlyLetters = function(s) {
     let tempString = '';
     for (let i = 0; i < s.length; i++) {

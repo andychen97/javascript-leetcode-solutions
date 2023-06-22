@@ -2,17 +2,12 @@
  * @param {number} n
  * @return {number}
  */
-const climbStairs = (n) => {
-    if(n <= 2) return n;
-    
-    let prev2 = 1;
-    let prev1 = 2;
-    let curr = 0;
-    for(let i = 3; i <= n; i++) {
-        curr = prev2 + prev1;
-        prev2 = prev1;
-        prev1 = curr;
-    }
-    
-    return curr;
-}
+
+let mem = [];
+
+var climbStairs = function(n) {
+    if (n <= 2) return n;
+    if (mem[n] !== undefined) return mem[n];
+    mem[n] = climbStairs(n - 1) + climbStairs(n - 2);
+    return mem[n];
+};

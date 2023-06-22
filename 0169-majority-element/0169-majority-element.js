@@ -3,16 +3,18 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    let map = {};
-    let num;
-    let max = 0; 
-    for (let i = 0; i < nums.length; i++){
-        map[nums[i]] ? map[nums[i]]++ : map[nums[i]] = 1
-        if (map[nums[i]] > max) {
-            max = map[nums[i]];
-            num = nums[i];
-        } 
+    let hash = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (hash[nums[i]]) hash[nums[i]]++;
+        else hash[nums[i]] = 1
     }
-    return num;
-    
+    let highest = 0;
+    let key;
+    for (value in hash) {
+        if (hash[value] > highest) {
+            highest = hash[value];
+            key = value;
+        }
+    }
+    return key;
 };

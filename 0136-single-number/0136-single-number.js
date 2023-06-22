@@ -3,9 +3,14 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    let xor = 0;
-    for (element of nums) {
-        xor ^= element
+    if (nums.length === 1) return nums[0];
+    let hash = {};
+   
+    for (let i = 0; i < nums.length; i++) {
+        if (hash[nums[i]] === undefined) hash[nums[i]] = 1;
+        else hash[nums[i]]++;
     }
-    return xor;
+    for (values in hash) {
+        if (hash[values] === 1) return values; 
+    }
 };

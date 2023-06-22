@@ -4,14 +4,15 @@
  * @return {boolean}
  */
 var canConstruct = function(ransomNote, magazine) {
-    let map = {};
+    if (magazine.length < ransomNote.length) return false;
+    let hash = {};
     for (let i = 0; i < magazine.length; i++) {
-        if (map[magazine[i]]) map[magazine[i]]++;
-        else map[magazine[i]] = 1;
+        hash[magazine[i]] ? hash[magazine[i]]++ : hash[magazine[i]] = 1
     }
+    
     for (let j = 0; j < ransomNote.length; j++) {
-        if (map[ransomNote[j]] === 0 || !(map[ransomNote[j]])) return false;
-        else map[ransomNote[j]]--;   
+        if (hash[ransomNote[j]] && hash[ransomNote[j]] !== 0) hash[ransomNote[j]]--;
+        else return false;
     }
     return true;
-}; 
+};

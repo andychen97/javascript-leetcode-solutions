@@ -2,10 +2,13 @@
  * @param {number} n
  * @return {number}
  */
-let mem = [];
+let memo = {};
 var climbStairs = function(n) {
-    if (n <= 2) return n;
-    if (mem[n] !== undefined) return mem[n];
-    mem[n] = climbStairs(n - 1) + climbStairs(n - 2);
-    return mem[n];
+    if (n == 0) {
+        return 1
+    }
+    if (!memo[n - 1]) {
+        memo[n - 1] = climbStairs(n - 1)
+    }
+    return memo[n - 1] + (memo[n - 2] || 0)
 };

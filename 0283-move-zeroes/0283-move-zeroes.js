@@ -14,3 +14,11 @@ var moveZeroes = function(nums) {
     }
 	return nums;
 };
+
+// this:
+// [nums[i], nums[index]] = [nums[index], nums[i]];
+
+// is the shorter way of writing this:
+// let temp = nums[i];
+// nums[i] = nums[index];
+// nums[index] = temp;

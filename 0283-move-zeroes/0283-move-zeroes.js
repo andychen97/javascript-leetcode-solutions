@@ -15,10 +15,10 @@ var moveZeroes = function(nums) {
 	return nums;
 };
 
-// this runs a lot faster:
+// this:
 // [nums[i], nums[index]] = [nums[index], nums[i]];
 
-// and is the shorter way of writing this:
+// is the shorter way of writing this:
 // let temp = nums[i];
 // nums[i] = nums[index];
 // nums[index] = temp;
